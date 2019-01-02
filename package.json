@@ -1,0 +1,25 @@
+{
+  "name": "details-proxy",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon server.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "proxy": "http://localhost:9002",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Themyscira19/Details-Proxy.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Themyscira19/Details-Proxy/issues"
+  },
+  "homepage": "https://github.com/Themyscira19/Details-Proxy#readme",
+  "dependencies": {
+    "axios": "^0.18.0",
+    "express": "^4.16.4"
+  }
+}
