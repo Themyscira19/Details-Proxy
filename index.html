@@ -1,27 +1,56 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Proxy</title>
     <link
-      href="https://fonts.googleapis.com/css?family=Staatliches"
       rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+      integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+      crossorigin="anonymous"
     />
-    <link rel="stylesheet" type="text/css" href="./styles/app.css" />
-    <script
-      crossorigin
-      src="https://unpkg.com/react@16/umd/react.production.min.js"
-    ></script>
-    <script
-      crossorigin
-      src="https://unpkg.com/react-dom@16/umd/react-dom.production.min.js"
-    ></script>
-    <link
-      rel="stylesheet"
-      href="http://localhost:9002/client/dist/styles/app.css"
-    />
+    <link rel="stylesheet" href="/main/global.css" />
+    <link rel="stylesheet" href="/main/styles.css" />
+    <link rel="stylesheet" href="/details/styles/app.css" />
+    <link rel="stylesheet" href="/critics/styles.css" />
+    <style>
+      body {
+        color: #343434;
+        background-color: #eee;
+        position: relative;
+        -webkit-font-smoothing: antialiased;
+      }
+    </style>
   </head>
   <body>
-    <div id="root"></div>
-    <script src="http://localhost:9002"></script>
+    <!-- <div id="mainCard"></div>
+    <div id="details"></div>
+    <div id="sidebar"></div>
+    <div id="critics"></div> -->
+    <div id="main_container" class="container" role="main">
+      <aside id="movieListColumn" class="col mob col-right hidden-xs">
+        <div id="sidebar"></div>
+      </aside>
+      <div
+        id="mainColumn"
+        class="col mob col-center-right col-full-xs"
+        style="max-width:744px"
+      >
+        <div id="main"></div>
+        <section
+          id="showtimes"
+          class="panel panel-rt panel-box"
+          style="margin-top:10px"
+        >
+          <div id="details"></div>
+          <div id="critics"></div>
+        </section>
+      </div>
+    </div>
+    <script src="/main/bundle.js"></script>
+    <script src="/details/bundle.js"></script>
+    <script src="/sidebar/bundle.js"></script>
+    <script src="/critics/bundle.js"></script>
   </body>
 </html>
