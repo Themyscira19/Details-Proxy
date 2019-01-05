@@ -8,8 +8,8 @@ app.use(express.static(__dirname));
 
 app.use((req, res, next) => {
   let url = req.url.split('/');
+  console.log(url);
   let path = url.slice(2).join('/');
-  console.log(path);
   let endpoint = url[1];
   if (endpoint === 'main') {
     let proxy =
@@ -17,23 +17,24 @@ app.use((req, res, next) => {
     request(proxy)
       .on('error', (err) => console.log(err))
       .pipe(res);
-    // console.log(proxy);
+    // console.log('main proxy', proxy);
   } else if (endpoint === 'details') {
     let proxy =
       'http://ec2-18-218-63-15.us-east-2.compute.amazonaws.com/' + path;
-    console.log(proxy);
+
     request(proxy)
       .on('error', (err) => console.log(err))
       .pipe(res);
   } else if (endpoint === 'critics') {
     let proxy =
       'http://ec2-3-16-138-173.us-east-2.compute.amazonaws.com/' + path;
-    // console.log(proxy);
+    //console.log(proxy);
     request(proxy)
       .on('error', (err) => console.log(err))
       .pipe(res);
   } else if (endpoint === 'sidebar') {
     let proxy = 'http://18.222.207.221:9004/' + path;
+    console.log('sidebar', proxy);
     request(proxy)
       .on('error', (err) => console.log(err))
       .pipe(res);
