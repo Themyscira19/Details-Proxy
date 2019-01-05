@@ -42,4 +42,5 @@ app.use((req, res, next) => {
 
 app.get('/', (req, res) => {});
 
-app.listen(process.env.PORT || 3000);
+let port = process.env.PORT || 3000;
+app.listen(port, () => console.log('houston we have lift-off on: ' + port));
